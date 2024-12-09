@@ -33,7 +33,11 @@ console.log("Marie David's 2nd friend is:", marieDavid2ndFriend());
 // We've helped start breaking down the plan!
 
 function cooperBradyGreeting() {
-  // Your code goes here...
+  let greeting = SOCBook.data.people[18].greeting;
+  console.log(greeting);
+
+  let ptag = document.getElementById("message");
+  ptag.innerHTML = greeting;
   // Select Cooper Brady's greeting message from the object
   // Select the p tag with the id of message
   // Set the text of the p tag to be the greeting message
@@ -49,8 +53,14 @@ cooperBradyGreeting();
 // If we find them, return the person
 // If we don't, return null
 
-function findPersonByEmail(email) {
-  // Your code goes in here...
+function findPersonByEmail(emaill) {
+  let people = SOCBook.data.people;
+  for (let i = 0; i < people.length; i++) {
+    if (people[i].email.includes(emaill)) {
+      return "success";
+    }
+  }
+  return null;
 }
 
 const found = findPersonByEmail("carversalinas@comtent.com");
