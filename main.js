@@ -72,7 +72,12 @@ console.log("What I found:", found);
 function getMangoLovers() {
   let mangoLovers = [];
 
-  // Your code goes here...
+  let people = SOCBook.data.people;
+  for (let i = 0; i < people.length; i++) {
+    if (people[i].favoriteFruit == "mango") {
+      mangoLovers.push(people[i].name);
+    }
+  }
 
   return mangoLovers;
 }
@@ -83,10 +88,14 @@ console.log("Who loves mango?", getMangoLovers());
 // Complete the function. Try and return the address of the person in the position in the array we've been handed
 
 function getAddress(positionInArray) {
-  // Your code goes here...
+  let array = SOCBook.data.people;
+
+  let answer = array[positionInArray]["full address"];
+
+  return answer;
 }
 
-console.log(getAddress(0));
+console.log(getAddress(1));
 
 // Task 7
 // Show a profile for each person in the ul with id "profiles"
